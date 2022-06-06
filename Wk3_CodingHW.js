@@ -15,7 +15,7 @@ ageSubtract();
 
 //1c.
 console.log("#1 part c, three different attempts and an answer check");
-//First Attempt on my own
+//First Attempt
 let sum = 0;
 for (i = 0; i < ages.length; i++) {
   sum += ages[i];
@@ -42,9 +42,8 @@ console.log(myAverage);
 //2.	Create an array called names that contains the following values: ‘Sam’, ‘Tommy’, ‘Tim’, ‘Sally’, ‘Buck’, ‘Bob’. a.	Use a loop to iterate through the array and calculate the average number of letters per name. Print the result to the console. b.	Use a loop to iterate through the array again and concatenate all the names together, separated by spaces, and print the result to the console.
 
 let names = ["Sam", "Tommy", "Tim", "Sally", "Buck", "Bob"];
-//2a.
 
-//5.	Create a new array called nameLengths. Write a loop to iterate over the previously created names array and add the length of each name to the nameLengths array.
+//2a. and //5.	Create a new array called nameLengths. Write a loop to iterate over the previously created names array and add the length of each name to the nameLengths array.
 console.log("#5");
 //creates a new array with the lengths of each element in names array
 let nameLengths = names.map(function (element) {
@@ -57,8 +56,18 @@ let totalLetters = nameLengths.reduce(function (previous, currentValue) {
   return previous + currentValue;
 });
 console.log(totalLetters / names.length);
-
 //2b.
+console.log("#2 part b");
+//
+let printArray = "";
+for (let i = 0; i < names.length; i++) {
+  printArray = printArray.concat(names[i]);
+  if (i < names.length - 1) {
+    printArray = printArray.concat(" ");
+  }
+}
+console.log(printArray);
+
 console.log("#6");
 //6.	Write a loop to iterate over the nameLengths array and calculate the sum of all the elements in the array. Print the result to the console.
 let letterSum = nameLengths.reduce(function (previous, currentValue) {
@@ -66,8 +75,28 @@ let letterSum = nameLengths.reduce(function (previous, currentValue) {
 });
 console.log(letterSum);
 
+console.log("#7");
 //7.	Write a function that takes two parameters, word and n, as arguments and returns the word concatenated to itself n number of times. (i.e. if I pass in ‘Hello’ and 3, I would expect the function to return ‘HelloHelloHello’).
 
+let string = "";
+function myMessage(word, n) {
+  let messageArray = [word];
+  for (let i = 0; i < n; i++) {
+    string = string.concat(messageArray[i]);
+    console.log(string);
+  }
+}
+myMessage();
+
+console.log("#12");
 //12.	Write a function called willBuyDrink that takes a boolean isHotOutside, and a number moneyInPocket, and returns true if it is hot outside and if moneyInPocket is greater than 10.50.
+
+function willBuyDrink(isHotOutside, moneyInPocket) {
+  if (isHotOutside === true && moneyInPocket > 10.5) {
+    return true;
+  }
+  return false;
+}
+console.log(willBuyDrink(true, 19));
 
 //13.	Create a function of your own that solves a problem. In comments, write what the function does and why you created it.
