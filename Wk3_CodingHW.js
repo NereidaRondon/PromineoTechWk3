@@ -82,11 +82,11 @@ let string = "";
 function myMessage(word, n) {
   let messageArray = [word];
   for (let i = 0; i < n; i++) {
-    string = string.concat(messageArray[i]);
+    string = string + messageArray[i];
     console.log(string);
   }
 }
-myMessage();
+myMessage("hello", 3);
 
 console.log("#12");
 //12.	Write a function called willBuyDrink that takes a boolean isHotOutside, and a number moneyInPocket, and returns true if it is hot outside and if moneyInPocket is greater than 10.50.
@@ -99,4 +99,34 @@ function willBuyDrink(isHotOutside, moneyInPocket) {
 }
 console.log(willBuyDrink(true, 19));
 
+console.log("#13");
 //13.	Create a function of your own that solves a problem. In comments, write what the function does and why you created it.
+//Create a function that takes in the diameter as a parameter and can calculate the volume of a sphere rounded to the nearest tenth.
+
+function volume(diameter) {
+  if (diameter >= 0) {
+    let radius = diameter / 2; //converts the diameter into the radius
+    let volSphere = (4 * Math.PI * radius ** 3) / 3; //formula for the volume of sphere
+    console.log(volSphere.toFixed(1)); //uses the result from volume variable and rounds to nearest tenth
+  } else {
+    console.log(undefined); //the diameter has to be a number that is a positive integer (or zero)
+  }
+}
+volume(6);
+volume(2);
+volume(0);
+volume(-10);
+volume("five");
+//Create a function that determines if three given length measures can create a triangle. The parameters are side1, side2, side3. The function will print true if the side lengths can form a triangle, and false if they can't.
+// In order for a triangle to exist, the lengths have to be long enough to reach each other at the vertices. In order for this to work, the shorter two side lengths together have to be longer than the longest side. This function makes sure that any two side lengths are compared against each other and are in fact longer than the remaining side. I created this function because I am using what I know and I know geometry. I figured I could create a calculator for two specific math concepts.
+
+function triangle(side1, side2, side3) {
+  if (side1 < side2 + side3 && side2 < side1 + side3 && side3 < side1 + side2) {
+    console.log(true);
+  } else {
+    console.log(false);
+  }
+}
+triangle(5, 3, 4);
+triangle(2, 5, 3);
+triangle(6, 1, 8);
