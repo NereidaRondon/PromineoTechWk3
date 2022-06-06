@@ -60,6 +60,7 @@ console.log(totalLetters / names.length);
 console.log("#2 part b");
 //
 let printArray = "";
+
 for (let i = 0; i < names.length; i++) {
   printArray = printArray.concat(names[i]);
   if (i < names.length - 1) {
@@ -67,6 +68,14 @@ for (let i = 0; i < names.length; i++) {
   }
 }
 console.log(printArray);
+
+console.log("#3");
+//3. How do you access the last element of any array?
+console.log(names[names.length - 1]);
+
+console.log("#4");
+//4.	How do you access the first element of any array?
+console.log(names[0]);
 
 console.log("#6");
 //6.	Write a loop to iterate over the nameLengths array and calculate the sum of all the elements in the array. Print the result to the console.
@@ -89,6 +98,15 @@ function myMessage(word, n) {
 myMessage("hello", 3);
 
 console.log("#12");
+
+//8.	Write a function that takes two parameters, firstName and lastName, and returns a full name (the full name should be the first and the last name separated by a space).
+
+//9.	Write a function that takes an array of numbers and returns true if the sum of all the numbers in the array is greater than 100.
+
+//10.	Write a function that takes an array of numbers and returns the average of all the elements in the array.
+
+//11.	Write a function that takes two arrays of numbers and returns true if the average of the elements in the first array is greater than the average of the elements in the second array.
+
 //12.	Write a function called willBuyDrink that takes a boolean isHotOutside, and a number moneyInPocket, and returns true if it is hot outside and if moneyInPocket is greater than 10.50.
 
 function willBuyDrink(isHotOutside, moneyInPocket) {
@@ -98,8 +116,8 @@ function willBuyDrink(isHotOutside, moneyInPocket) {
   return false;
 }
 console.log(willBuyDrink(true, 19));
-
 console.log("#13");
+
 //13.	Create a function of your own that solves a problem. In comments, write what the function does and why you created it.
 //Create a function that takes in the diameter as a parameter and can calculate the volume of a sphere rounded to the nearest tenth.
 
