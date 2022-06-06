@@ -38,7 +38,7 @@ console.log(ages.reduce(agesSum) / ages.length);
 let add = 3 + 9 + 23 + 64 + 2 + 8 + 28 + 93 + 38;
 let myAverage = add / 9;
 console.log(myAverage);
-
+//////////////////////////////////////////////////////////
 //2.	Create an array called names that contains the following values: ‘Sam’, ‘Tommy’, ‘Tim’, ‘Sally’, ‘Buck’, ‘Bob’. a.	Use a loop to iterate through the array and calculate the average number of letters per name. Print the result to the console. b.	Use a loop to iterate through the array again and concatenate all the names together, separated by spaces, and print the result to the console.
 
 let names = ["Sam", "Tommy", "Tim", "Sally", "Buck", "Bob"];
@@ -50,6 +50,7 @@ let nameLengths = names.map(function (element) {
   return element.length;
 });
 console.log(nameLengths);
+//////////////////////////////////////////////////////////
 //adds up the values of nameLength array
 console.log("#2 part a");
 let totalLetters = nameLengths.reduce(function (previous, currentValue) {
@@ -68,22 +69,22 @@ for (let i = 0; i < names.length; i++) {
   }
 }
 console.log(printArray);
-
+//////////////////////////////////////////////////////////
 console.log("#3");
 //3. How do you access the last element of any array?
 console.log(names[names.length - 1]);
-
+//////////////////////////////////////////////////////////
 console.log("#4");
 //4.	How do you access the first element of any array?
 console.log(names[0]);
-
+//////////////////////////////////////////////////////////
 console.log("#6");
 //6.	Write a loop to iterate over the nameLengths array and calculate the sum of all the elements in the array. Print the result to the console.
 let letterSum = nameLengths.reduce(function (previous, currentValue) {
   return previous + currentValue;
 });
 console.log(letterSum);
-
+//////////////////////////////////////////////////////////
 console.log("#7");
 //7.	Write a function that takes two parameters, word and n, as arguments and returns the word concatenated to itself n number of times. (i.e. if I pass in ‘Hello’ and 3, I would expect the function to return ‘HelloHelloHello’).
 
@@ -96,19 +97,38 @@ function myMessage(word, n) {
   }
 }
 myMessage("hello", 3);
-
-console.log("#12");
-
+//////////////////////////////////////////////////////////
+console.log("#8");
 //8.	Write a function that takes two parameters, firstName and lastName, and returns a full name (the full name should be the first and the last name separated by a space).
-
+function fullName(firstName, lastName) {
+  console.log(firstName + " " + lastName);
+}
+fullName("Jane", "Smith");
+////////////////////////////////////////////////////////////
+console.log("#9");
+let array1 = [5, 10, 15, 20, 25, 30]; //equals 105
+let array2 = [1, 3, 4, 6, 7];
 //9.	Write a function that takes an array of numbers and returns true if the sum of all the numbers in the array is greater than 100.
-
+function sumGreater(array) {
+  let sum = array.reduce(function (accumulator, currentValue) {
+    return accumulator + currentValue;
+  });
+  if (sum > 100) {
+    console.log(true);
+  } else {
+    console.log(false);
+  }
+}
+sumGreater(array1);
+//////////////////////////////////////////////////////////
 //10.	Write a function that takes an array of numbers and returns the average of all the elements in the array.
-
+//////////////////////////////////////////////////////////
 //11.	Write a function that takes two arrays of numbers and returns true if the average of the elements in the first array is greater than the average of the elements in the second array.
-
+function greaterAverage(arr1, arr2) {}
+greaterAverage(array1, array2);
+console.log("#12");
+//////////////////////////////////////////////////////////
 //12.	Write a function called willBuyDrink that takes a boolean isHotOutside, and a number moneyInPocket, and returns true if it is hot outside and if moneyInPocket is greater than 10.50.
-
 function willBuyDrink(isHotOutside, moneyInPocket) {
   if (isHotOutside === true && moneyInPocket > 10.5) {
     return true;
@@ -117,9 +137,10 @@ function willBuyDrink(isHotOutside, moneyInPocket) {
 }
 console.log(willBuyDrink(true, 19));
 console.log("#13");
-
+//////////////////////////////////////////////////////////
 //13.	Create a function of your own that solves a problem. In comments, write what the function does and why you created it.
-//Create a function that takes in the diameter as a parameter and can calculate the volume of a sphere rounded to the nearest tenth.
+
+//A function that takes in the diameter as a parameter and can calculate the volume of a sphere rounded to the nearest tenth. This is a volume calculator. It should print the volume of a sphere with nay size diameter. I created this function because I am using what I know and I know geometry. I figured I could create a calculator for two specific math concepts.
 
 function volume(diameter) {
   if (diameter >= 0) {
@@ -130,12 +151,14 @@ function volume(diameter) {
     console.log(undefined); //the diameter has to be a number that is a positive integer (or zero)
   }
 }
+//Test values:
 volume(6);
 volume(2);
 volume(0);
 volume(-10);
 volume("five");
-//Create a function that determines if three given length measures can create a triangle. The parameters are side1, side2, side3. The function will print true if the side lengths can form a triangle, and false if they can't.
+
+//A function that determines if three given length measures can create a triangle. The parameters are side1, side2, side3. The function will print true if the side lengths can form a triangle, and false if they can't.
 // In order for a triangle to exist, the lengths have to be long enough to reach each other at the vertices. In order for this to work, the shorter two side lengths together have to be longer than the longest side. This function makes sure that any two side lengths are compared against each other and are in fact longer than the remaining side. I created this function because I am using what I know and I know geometry. I figured I could create a calculator for two specific math concepts.
 
 function triangle(side1, side2, side3) {
@@ -145,6 +168,7 @@ function triangle(side1, side2, side3) {
     console.log(false);
   }
 }
-triangle(5, 3, 4);
-triangle(2, 5, 3);
-triangle(6, 1, 8);
+//Test values:
+triangle(5, 3, 4); //true
+triangle(2, 5, 3); //false becuase 2+3 is not greather than 5
+triangle(6, 1, 8); //false becuase 6+1 is not greather than 8
