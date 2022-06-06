@@ -51,7 +51,6 @@ let nameLengths = names.map(function (element) {
 });
 console.log(nameLengths);
 //////////////////////////////////////////////////////////
-//adds up the values of nameLength array
 console.log("#2 part a");
 let totalLetters = nameLengths.reduce(function (previous, currentValue) {
   return previous + currentValue;
@@ -59,9 +58,7 @@ let totalLetters = nameLengths.reduce(function (previous, currentValue) {
 console.log(totalLetters / names.length);
 //2b.
 console.log("#2 part b");
-//
 let printArray = "";
-
 for (let i = 0; i < names.length; i++) {
   printArray = printArray.concat(names[i]);
   if (i < names.length - 1) {
@@ -87,16 +84,15 @@ console.log(letterSum);
 //////////////////////////////////////////////////////////
 console.log("#7");
 //7.	Write a function that takes two parameters, word and n, as arguments and returns the word concatenated to itself n number of times. (i.e. if I pass in ‘Hello’ and 3, I would expect the function to return ‘HelloHelloHello’).
-
 let string = "";
 function myMessage(word, n) {
-  let messageArray = [word];
   for (let i = 0; i < n; i++) {
-    string = string + messageArray[i];
-    console.log(string);
+    string += word;
   }
+  console.log(string); //make sure to console.log out of the loop
 }
 myMessage("hello", 3);
+
 //////////////////////////////////////////////////////////
 console.log("#8");
 //8.	Write a function that takes two parameters, firstName and lastName, and returns a full name (the full name should be the first and the last name separated by a space).
@@ -106,8 +102,9 @@ function fullName(firstName, lastName) {
 fullName("Jane", "Smith");
 ////////////////////////////////////////////////////////////
 console.log("#9");
-let array1 = [5, 10, 15, 20, 25, 30]; //equals 105
-let array2 = [1, 3, 4, 6, 7];
+//Arrays created to test #9-#11:
+let array1 = [5, 10, 15, 20, 25, 30]; //total sum equals 105, average is 17.5
+let array2 = [1, 3, 4, 6, 7]; // average equals 4.2
 //9.	Write a function that takes an array of numbers and returns true if the sum of all the numbers in the array is greater than 100.
 function sumGreater(array) {
   let sum = array.reduce(function (accumulator, currentValue) {
@@ -119,15 +116,40 @@ function sumGreater(array) {
     console.log(false);
   }
 }
-sumGreater(array1);
+//Test values:
+sumGreater(array1); //Returns true
+sumGreater(array2); //Returns false
 //////////////////////////////////////////////////////////
+console.log("#10");
 //10.	Write a function that takes an array of numbers and returns the average of all the elements in the array.
+function average(array) {
+  let arrTotalSum = array.reduce(function (accumulator, currentValue) {
+    return accumulator + currentValue;
+  });
+  console.log(arrTotalSum / array.length);
+}
+average(array1);
+average(array2);
 //////////////////////////////////////////////////////////
+console.log("#11");
 //11.	Write a function that takes two arrays of numbers and returns true if the average of the elements in the first array is greater than the average of the elements in the second array.
-function greaterAverage(arr1, arr2) {}
-greaterAverage(array1, array2);
-console.log("#12");
+function greaterAverage(arr1, arr2) {
+  let sumArray1 = arr1.reduce(function (accumulator, currentValue) {
+    return accumulator + currentValue;
+  });
+  let sumArray2 = arr2.reduce(function (accumulator, currentValue) {
+    return accumulator + currentValue;
+  });
+  if (sumArray1 / arr1.length > sumArray2 / arr2.length) {
+    console.log(true);
+  } else {
+    console.log(false);
+  }
+}
+greaterAverage(array1, array2); //returns true because 17.5 > 4.5
+greaterAverage(array2, array1); //returns false, 4.5 is not greater than 17.5
 //////////////////////////////////////////////////////////
+console.log("#12");
 //12.	Write a function called willBuyDrink that takes a boolean isHotOutside, and a number moneyInPocket, and returns true if it is hot outside and if moneyInPocket is greater than 10.50.
 function willBuyDrink(isHotOutside, moneyInPocket) {
   if (isHotOutside === true && moneyInPocket > 10.5) {
@@ -136,11 +158,13 @@ function willBuyDrink(isHotOutside, moneyInPocket) {
   return false;
 }
 console.log(willBuyDrink(true, 19));
-console.log("#13");
+console.log(willBuyDrink(false, 11));
+console.log(willBuyDrink(true, 9));
 //////////////////////////////////////////////////////////
+console.log("#13");
 //13.	Create a function of your own that solves a problem. In comments, write what the function does and why you created it.
-
-//A function that takes in the diameter as a parameter and can calculate the volume of a sphere rounded to the nearest tenth. This is a volume calculator. It should print the volume of a sphere with nay size diameter. I created this function because I am using what I know and I know geometry. I figured I could create a calculator for two specific math concepts.
+console.log("My problem A.");
+//A function that takes in the diameter as a parameter and can calculate the volume of a sphere rounded to the nearest tenth. This is a volume calculator. It should print the volume of a sphere with any size diameter. I created this function because I am using what I know and as a math teacher I know geometry. I figured I could create a calculator for two specific math concepts.
 
 function volume(diameter) {
   if (diameter >= 0) {
@@ -155,9 +179,10 @@ function volume(diameter) {
 volume(6);
 volume(2);
 volume(0);
-volume(-10);
-volume("five");
+volume(-10); //prints undefined
+volume("five"); //prints undefined
 
+console.log("My problem B.");
 //A function that determines if three given length measures can create a triangle. The parameters are side1, side2, side3. The function will print true if the side lengths can form a triangle, and false if they can't.
 // In order for a triangle to exist, the lengths have to be long enough to reach each other at the vertices. In order for this to work, the shorter two side lengths together have to be longer than the longest side. This function makes sure that any two side lengths are compared against each other and are in fact longer than the remaining side. I created this function because I am using what I know and I know geometry. I figured I could create a calculator for two specific math concepts.
 
