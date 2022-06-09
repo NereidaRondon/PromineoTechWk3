@@ -3,9 +3,8 @@
 console.log("#1 part a");
 let ages = [3, 9, 23, 64, 2, 8, 28, 93];
 function ageSubtract() {
-  for (i = 0; i < ages.length; i++) {
-    console.log(ages[ages.length - 1] - ages[0]);
-  }
+  for (i = 0; i < ages.length; i++) {}
+  console.log(`1a Subtraction solution: ${ages[ages.length - 1] - ages[0]}`);
 }
 ageSubtract();
 //1b.
@@ -197,3 +196,22 @@ function triangle(side1, side2, side3) {
 triangle(5, 3, 4); //true
 triangle(2, 5, 3); //false becuase 2+3 is not greather than 5
 triangle(6, 1, 8); //false becuase 6+1 is not greather than 8
+console.log("Example:");
+
+let num1 = 5;
+let num2 = 5;
+if (num1 > num2) {
+  console.log(num1);
+} else if (num2 > num1) {
+  console.log(num2);
+} else {
+  console.log("Num1 is equal to Num2");
+}
+
+if (type a situation here) {
+  //type here what you want to happen/print for this situation if it is true
+  } else if ( type another situation here ){
+    //type here what you want to happen/print for this situation    
+  } else {
+      //type here what you want to print for all other situations
+  }
