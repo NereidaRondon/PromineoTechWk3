@@ -19,7 +19,7 @@ let sum = 0;
 for (i = 0; i < ages.length; i++) {
   sum += ages[i];
 }
-console.log(sum / ages.length);
+console.log(`#1 part c. Average Ages: ${sum / ages.length}`);
 
 //Second Attempt from notes
 let sum1 = ages.reduce(function (previous, currentValue) {
@@ -196,10 +196,5 @@ function triangle(side1, side2, side3) {
 triangle(5, 3, 4); //true
 triangle(2, 5, 3); //false becuase 2+3 is not greather than 5
 triangle(6, 1, 8); //false becuase 6+1 is not greather than 8
-console.log("Example:");
 
-let namesArray1 = ["Kelly", "Sam", "Kate"];
-let nameLengths1 = namesArray1.map(function (element) {
-  return element.length;
-});
-console.log(nameLengths1);
+

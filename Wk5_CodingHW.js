@@ -6,10 +6,3 @@
 
 //c.	Your menu should have the options to create, view, and delete elements.
 
-let arr = [1, 2, 3, 4, 5];
-function getFirstValue(arr) {
-  return arr[0];
-}
-getFirstValue();
-
-console.log("hi");
